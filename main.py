@@ -1,8 +1,6 @@
 import subprocess
 import platform
 
-# target = ["8.8.8.8", "127.0.0.1","1.1.1.1"]
-
 if platform.system().lower() == "windows":
     flag = "-n"
 else:
