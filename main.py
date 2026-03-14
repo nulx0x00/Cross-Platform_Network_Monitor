@@ -9,9 +9,9 @@ else:
 with open("target.txt", "r") as file:
     for line in file:
         try:
-            command = f"ping {flag} 1  {line.strip()} "
+            command = ["ping", flag, " 1 ", line.strip() ]
             print(f"checking......  {line.strip()}")
-            result = subprocess.run(command, shell = True, capture_output=True, text = True, timeout=2 )
+            result = subprocess.run(command, capture_output=True, text = True, timeout=2 )
             if result.returncode == 0:
                 print(f" [+] {line.strip()} is up ")
             else :
