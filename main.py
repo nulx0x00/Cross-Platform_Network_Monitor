@@ -6,7 +6,7 @@ if platform.system().lower() == "windows":
 else:
     flag = "-c"
 
-with open("target.txt", "r") as file:
+with open("target.txt.example", "r") as file:
     for line in file:
         try:
             command = ["ping", flag, " 1 ", line.strip() ]
