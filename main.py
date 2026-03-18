@@ -7,6 +7,7 @@ else:
     flag = "-c"
 
 with open("target.txt.example", "r") as file:
+
     for line in file:
         try:
             command = ["ping", flag, " 1 ", line.strip() ]
@@ -17,5 +18,6 @@ with open("target.txt.example", "r") as file:
             else :
                 print (f" [-] {line.strip()} is down")
                 print(f"DEBUG: {result.stderr}")
+
         except subprocess.TimeoutExpired:
             print(f" [-] {line.strip()} is down (Timed Out)")
